@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KALKULATOR</title>
+        <style>
+        #kalkulator{
+        width: 430px;
+        height: 550px;
+        text-align: center;
+        color:white;
+        font-family:'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+        
+        background: linear-gradient(270deg, rgb(33, 42, 170) 31%, rgb(20, 167, 7) 100%);
+        
+        border-radius: 40px;
+        }
+        #wynik{
+        height: 70px;
+        width: 380px;
+        margin-top: 40px;
+        margin-bottom: 10px;
+        text-align: right;
+        border-radius: 40px;
+        font-size: 50px;
+        padding: 10px;
+        }
+
+        #butt, #suma{  
+        width: 80px;
+        height: 50px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        border: 0;
+        border-radius: 20px;
+        font-size: 30px;
+        }
+
+        #dwapola{
+        width: 173px;
+        height: 50px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        border: 0;
+        border-radius: 20px;
+        font-size: 30px;
+        }
+
+        #liczby{
+        margin-top: 35px;
+        }
+
+        #butt:hover, #suma:hover{ 
+        background-color: rgb(199, 128, 128);
+        color: white);
+        }
+
+        #dwapola:hover{ 
+        background-color: rgb(199, 128, 128);
+        color: white);
+        }
+
+        #butt:active, #suma:active{ 
+        background-color: rgb(199, 128, 128);
+        color: white;
+        }
+
+        #dwapola:active{ 
+        background-color: rgb(199, 128, 128);
+        color: white;
+        }
+
+        body{
+        background-color: rgb(44, 203, 224);
+        }
+        
+        </style>
+        
+        </head>
+        <body>
+            <div id="kalkulator"> 
+                <b><b> Standardowy</b>       
+            <input type="text" id="wynik">
+            <br>
+            <div id="liczby">
+            <input type="button" value="C" id="dwapola" onclick="napisz('c')">
+            <input type="button" value="/" id="butt" onclick="napisz('/')">
+            <input type="button" value="⌫" id="butt" onclick="usun()">
+            <br>
+            <input type="button" value="7" id="butt" onclick="napisz('7')">
+            <input type="button" value="8" id="butt" onclick="napisz('8')">
+            <input type="button" value="9" id="butt" onclick="napisz('9')">
+            <input type="button" value="*" id="butt" onclick="napisz('*')">
+            <br>
+            <input type="button" value="4" id="butt" onclick="napisz('4')">
+            <input type="button" value="5" id="butt" onclick="napisz('5')">
+            <input type="button" value="6" id="butt" onclick="napisz('6')">
+            <input type="button" value="-" id="butt" onclick="napisz('-')">
+            <br>
+            <input type="button" value="1" id="butt" onclick="napisz('1')">
+            <input type="button" value="2" id="butt" onclick="napisz('2')">
+            <input type="button" value="3" id="butt" onclick="napisz('3')">
+            <input type="button" value="+" id="butt" onclick="napisz('+')">
+            <br>
+            <input type="button" value="0" id="butt" onclick="napisz('0')">
+            <input type="button" value="%" id="butt" onclick="napisz('/')">
+            <input type="button" value="." id="butt" onclick="napisz('.')">
+            <input type="button" value="=" id="suma" onclick="suma()">
+            </div>
+            </b></div><b>
+            
+            <script>
+            var wynikk = document.getElementById('wynik');
+                    
+            function napisz(a){
+            wynikk.value += a;
+                        
+            if (a=='c'){
+            wynikk.value = '';
+            }
+            }  
+            function suma() {
+            a = wynikk.value;
+            a = eval(a);
+            wynikk.value = a;
+            }
+            function usun() {
+            var liczba = wynikk.value;
+            var nwm = liczba.length-1;
+            var nowaliczba = liczba.substring(0, nwm);
+            wynikk.value=nowaliczba;
+            }  
+            
+            function procent(){
+                var procent = ($('.procent').val() * 0.01) + 1;
+            }
+            </script>
+            
+            
+            </b></body>
+</html>
